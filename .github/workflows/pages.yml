@@ -29,7 +29,7 @@ jobs:
             cp -r "Web" ./_site/
           fi
           
-          # Копируем папку Shop_site (НОВОЕ НАЗВАНИЕ!)
+          # Копируем папку Shop_site
           if [ -d "Shop_site" ]; then
             echo "Копирую Shop_site"
             cp -r "Shop_site" ./_site/
