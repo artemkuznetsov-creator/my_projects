@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.head_2 {
+    text-align: center;
+    font-family: 'Bungee', sans-serif;
+    font-size: 28px;
+}
+
+.content {
+    font-family: 'Bungee', cursive;
+    text-align: center;
+}
+.header_content{
+    padding-bottom: 15px;
+    background-color: white;
+    border-bottom: 5px solid black;
+    padding: 5px;
+}
+.footer_content{
+    padding-top: 15px;
+    background-color: white;
+    border-top: 5px solid black;
+    padding: 7px;
+}
+
+.background_section{
+    background: linear-gradient(-45deg, blue, pink);
+    background-size: 400% 400%;
+    height: 100%;
+    width:100%;
+    animation: gradientAnimation 5s ease infinite;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.top_section {
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 5px solid black;
+    padding: 30px;
+    background-color: white;
+    max-width: 600px;
+    width: 100%;
+    max-height: 1000px;
+    height: 100%;
+    margin: 100px auto;
+}

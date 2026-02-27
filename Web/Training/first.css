@@ -1,0 +1,37 @@
+body {
+    background-color: darkslateblue;
+}
+
+#welcome {
+    color:darkslategray;
+    font-size: 1in;
+    border-style: outset;
+    margin: 50px 50px 50px 50px;
+    border-style: outset;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: aliceblue, gray;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    background-color: aliceblue;
+
+}
+div{
+    margin: 50px 50px 50px 50px;
+    border-style: outset;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: aliceblue, gray;
+    background-color: aliceblue;
+
+}
+
+.list {
+    text-align: center;
+    opacity: 0.9;
+    font-size: 0.5in;
+    margin: 50px 50px 50px 50px;
+    color: darkslategray;
+    list-style:upper-roman;
+
+}
