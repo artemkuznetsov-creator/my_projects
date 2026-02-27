@@ -20,58 +20,26 @@ jobs:
 
       - name: Prepare files for deployment
         run: |
-          # Создаем папку для публикации
           mkdir -p ./_site
           
-          # Копируем папку Web
-          if [ -d "Web" ]; then
-            echo "Копирую Web"
-            cp -r "Web" ./_site/
-          fi
+          # Копируем папки
+          [ -d "Web" ] && cp -r "Web" ./_site/
+          [ -d "Shop_site" ] && cp -r "Shop_site" ./_site/
+          [ -d "Training" ] && cp -r "Training" ./_site/
           
-          # Копируем папку Shop_site
-          if [ -d "Shop_site" ]; then
-            echo "Копирую Shop_site"
-            cp -r "Shop_site" ./_site/
-          fi
-          
-          # Копируем папку Training
-          if [ -d "Training" ]; then
-            echo "Копирую Training"
-            cp -r "Training" ./_site/
-          fi
-          
-          # Создаем главную страницу со ссылками
-          cat > ./_site/index.html << 'EOF'
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Мои лабораторные работы</title>
-    <meta charset="UTF-8">
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
-        h1 { color: #333; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 15px 0; }
-        a { display: block; padding: 15px; background: #f0f0f0; color: #333; 
-            text-decoration: none; border-radius: 5px; }
-        a:hover { background: #e0e0e0; }
-    </style>
-</head>
-<body>
-    <h1>Лабораторные работы</h1>
-    <ul>
-        <li><a href="Web/">🌐 Web</a></li>
-        <li><a href="Shop_site/">🛍️ Shop site</a></li>
-        <li><a href="Training/">📚 Training</a></li>
-    </ul>
-</body>
-</html>
-EOF
-
-          # Проверяем результат
-          echo "Содержимое _site:"
-          ls -la ./_site/
+          # Создаем простую HTML страницу
+          echo '<!DOCTYPE html>
+          <html>
+          <head><title>Лабы</title></head>
+          <body>
+            <h1>Лабораторные работы</h1>
+            <ul>
+              <li><a href="Web/">Web</a></li>
+              <li><a href="Shop_site/">Shop site</a></li>
+              <li><a href="Training/">Training</a></li>
+            </ul>
+          </body>
+          </html>' > ./_site/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
