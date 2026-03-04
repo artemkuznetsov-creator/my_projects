@@ -20,28 +20,26 @@ jobs:
 
       - name: Prepare files for deployment
         run: |
-          mkdir ./_site
+          mkdir -p ./_site
           
-          # Копируем папку Web
-          if [ -d "Web" ]; then
-            echo "Copying Web"
-            cp -r "Web" ./_site/
-          fi
+          # Копируем папки
+          [ -d "Web" ] && cp -r "Web" ./_site/
+          [ -d "Shop_site" ] && cp -r "Shop_site" ./_site/
+          [ -d "Training" ] && cp -r "Training" ./_site/
           
-          # Копируем папку Shop site (с пробелом!)
-          if [ -d "Shop site" ]; then
-            echo "Copying Shop site"
-            cp -r "Shop site" ./_site/
-          fi
-          
-          # Копируем папку Training
-          if [ -d "Training" ]; then
-            echo "Copying Training"
-            cp -r "Training" ./_site/
-          fi
-          
-          echo "Contents of _site:"
-          ls -la ./_site/
+          # Создаем простую HTML страницу
+          echo '<!DOCTYPE html>
+          <html>
+          <head><title>Лабы</title></head>
+          <body>
+            <h1>Лабораторные работы</h1>
+            <ul>
+              <li><a href="Web/">Web</a></li>
+              <li><a href="Shop_site/">Shop site</a></li>
+              <li><a href="Training/">Training</a></li>
+            </ul>
+          </body>
+          </html>' > ./_site/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
