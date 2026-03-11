@@ -1,6 +1,5 @@
 import xml.etree.ElementTree as ET
 
-from attr import attributes
 
 
 def command_1(root):
@@ -62,29 +61,52 @@ def command_4(root, tree):
     if router is not None:
         root.remove(router)
         tree.write('data.xml', encoding='UTF-8')
+def command_6(root, tree):
+    with_usb = ET.Element('routers')
+    without_usb = ET.Element('routers')
+    for router in root.findall('./router'):
+        ports = router.findtext('ports')
+        print(ports)
+        if '1xUSB' in ports:
+            with_usb.append(router)
+        else:
+            without_usb.append(router)
+        tree_with_usb = ET.ElementTree(with_usb)
+
+        tree_without_usb = ET.ElementTree(without_usb)
+        tree_with_usb.write('has_wires.xml', encoding='UTF-8')
+        tree_without_usb.write('wireless.xml', encoding='UTF-8')
 
 
 
 
 def main():
+    XMLTree = ET.parse('data.xml')
+    root = XMLTree.getroot()
     print("1: Вывод всех маршрутизаторов")
     print("2: Вывод по бренду")
     print("3: Добавление")
     print("4: Удаление")
-    print('-'*100)
-    commands = input("Введите номер команды: ")
+    print("5: Выход")
+    print("6: Разделить")
+    while True:
 
-    XMLTree = ET.parse('data.xml')
-    root = XMLTree.getroot()
+        print('-' * 100)
+        commands = input("Введите номер команды: ")
+        if commands == '1':
+            command_1(root)
 
-    if commands == '1':
-        command_1(root)
-    if commands == "2":
-        command_2(root)
-    if commands == "3":
-        command_3(root, XMLTree)
-    if commands == "4":
-         command_4(root, XMLTree)
+        if commands == "2":
+            command_2(root)
+        if commands == "3":
+            command_3(root, XMLTree)
+        if commands == "4":
+             command_4(root, XMLTree)
+        if commands == "5":
+            break
+        if commands == "6":
+            command_6(root, XMLTree)
+
 
 
 if __name__ == '__main__':

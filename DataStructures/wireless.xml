@@ -1,0 +1,17 @@
+<routers><router article="RT-AC1200">
+        <name brand="ASUS">ASUS RT-AC1200</name>
+        <antennas>4</antennas>
+        <frequency>2.4/5 ГГц</frequency>
+        <standard>Wi-Fi 5 (802.11ac)</standard>
+        <ports>4xLAN, 1xWAN</ports>
+    </router>
+
+    <router article="MERC-AC10">
+        <name brand="Mercusys">Mercusys AC10</name>
+        <antennas>4</antennas>
+        <frequency>2.4/5 ГГц</frequency>
+        <standard>Wi-Fi 5</standard>
+        <ports>3xLAN, 1xWAN</ports>
+    </router>
+
+</routers>

@@ -1,0 +1,19 @@
+<routers><router article="RF-12-330">
+        <name brand="Keenetic">Keenetic Giga (KN-1010)</name>
+        <antennas>6</antennas>
+        <frequency>2.4/5 ГГц</frequency>
+        <standard>Wi-Fi 6 (802.11ax)</standard>
+        <ports>4xLAN, 1xWAN, 1xUSB 3.0</ports>
+    </router>
+
+    <router article="TP-X60-EX">
+        <name brand="TP-Link">TP-Link Archer AX60</name>
+        <antennas>6</antennas>
+        <frequency>2.4/5/6 ГГц</frequency>
+        <standard>Wi-Fi 6E</standard>
+        <ports>4xLAN, 1xWAN, 1xUSB-C</ports>
+        <description>Флагманская модель с поддержкой 6 ГГц</description>
+    </router>
+
+
+    </routers>
