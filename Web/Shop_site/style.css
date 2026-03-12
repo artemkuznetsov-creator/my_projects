@@ -31,7 +31,7 @@ body {
     min-height: 100vh;
     background: linear-gradient(rgb(154, 22, 154), rgb(3, 3, 130), rgb(17, 9, 65));
     background-size: 300% 300%;
-    animation: gradientAnimation 10s linear infinite;
+    animation: gradientAnimation 9s linear infinite;
 }
 
 @keyframes gradientAnimation {
@@ -89,10 +89,13 @@ body {
 .ul {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     color: azure;
     font-family: "Play", serif;
 
 }
+
+
 .li{
     margin: 20px;
     
@@ -123,6 +126,7 @@ body {
 .top{
     display: flex;
     width: 100%;
+    min-width: 900px;
     height: auto;
     justify-content: center;
     align-items: center;
@@ -146,7 +150,8 @@ body {
 .item{
     padding: 20px;
     margin: 25px;
-    width: 300px;
+    max-width: 300px;
+    min-width: 200px;
     background-color: white;
     border: 5px solid rgb(190, 179, 179);
     border-radius: 20px;
@@ -193,9 +198,10 @@ body {
     flex-direction: column;
     justify-content: center;
     transition: all 1s ease;
+    max-width: 700px;
 }
 .container:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .image_firm{
@@ -224,4 +230,18 @@ body {
 
 .top a:hover{
     color:blue;
+}
+.button{
+    margin: 10px;
+    padding: 10px;
+    max-width: 110px;
+    min-width: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(44, 44, 45);
+    color: azure;
+    font-family: "Play", serif;
+}
+.top .container .button {
+    color: azure;
 }
