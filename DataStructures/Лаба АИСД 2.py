@@ -1,7 +1,4 @@
 import xml.etree.ElementTree as ET
-
-
-
 def command_1(root):
     answer = ''
     for router in root.findall('./router'):
@@ -106,8 +103,5 @@ def main():
             break
         if commands == "6":
             command_6(root, XMLTree)
-
-
-
 if __name__ == '__main__':
     main()

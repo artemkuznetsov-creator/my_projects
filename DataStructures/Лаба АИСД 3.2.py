@@ -1,5 +1,5 @@
 import re
-result = re.findall(r'\+7[()0-9-]{1,13}', input("Введите строку: "))
+result = re.findall(r'\+7[()0-9-]{1,14}', input("Введите строку: "))
 print(result)
 
 '''
