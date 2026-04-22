@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let n = 0;
+        let m = 0; 
+        function myfunc(e){
+            if (e.keyCode == 39){
+                n+= 3;
+            }
+            if (e.keyCode == 37){
+                n-= 3;
+            }
+            if (e.keyCode == 40){
+                m+= 3;
+            }
+            if (e.keyCode == 38){
+                m-= 3;
+            }
+            document.getElementById("test").style.marginLeft = n + "px";
+            document.getElementById("test").style.marginTop = m + "px";
+        }
+        document.onkeydown=myfunc;
+    </script> -->
+    <!-- <div id="test">
+        <img src="photo2.jpg" height="100" width="100">
+    </div> -->
+    <!-- <script>
+        let t = false;
+        let dx = 0;
+        let dy = 0;
+        function myfunc(e){
+            if (t == true){
+                document.getElementById("test").style.marginLeft = e.clientX-dx + "px";
+                document.getElementById("test").style.marginTop = e.clientY-dy + "px";
+            }  
+        }
+        document.onmousemove = myfunc;
+        function mydown(e){
+            t = true;
+            let imgX = parseInt(document.getElementById("test").style.marginLeft)||0;
+            dx = e.clientX - imgX;
+        }
+        function myup(){
+            t = false;
+        }
+        document.onmousedown = mydown;
+        document.onmouseup = myup;
+    </script>
+    <div id="test">
+        <img src="photo2.jpg" height="100px" width="100px">
+    </div> -->
+    <canvas width='480' height='200' id="mycanvas"></canvas>
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext("2d");
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(30,30,50,50);
+        var x = 0;
+        function myrepaint(){
+            ctx.fillStyle = "white";
+            ctx.fillRect(0,0,canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.fillRect(x,-20,50, 50);
+            ctx.fillStyle = "blue";
+            ctx.fillRect(x+20, 20,50, 50);
+            ctx.fillStyle = "green";
+            ctx.fillRect(x-20,10,50,50);
+            x++;
+        }
+        setInterval(myrepaint,3);
+
+
+    </script>
+</body>
+</html>

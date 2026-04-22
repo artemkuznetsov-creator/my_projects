@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: system-ui, 'Segoe UI', monospace;
+}
+
+.game {
+    background: #f5f2e6;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.panel {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    background: #d9cdb0;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 1.4rem;
+    background: #2c2c2c;
+    color: #ffd966;
+    padding: 4px 16px;
+    border-radius: 30px;
+}
+
+select, button {
+    padding: 6px 16px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: 1px solid #aa8c54;
+    background: #fff3e0;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    background-color: #deb887;
+    border: 2px solid #8b5a2b;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0d9b5;
+}
+
+.cell.dark {
+    background-color: #b58863;
+}
+
+.piece {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fff, #aaa);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.piece.black {
+    background: radial-gradient(circle at 35% 35%, #444, #111);
+}
+
+.cell.selected {
+    background-color: #ffe484 !important;
+    box-shadow: inset 0 0 0 2px #d4a017;
+}
+
+.records {
+    margin-top: 20px;
+    background: #e8ddc5;
+    padding: 10px;
+    border-radius: 16px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.records h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+}
+
+.record-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #bbaa82;
+    padding: 5px 8px;
+    font-family: monospace;
+}
+
+.hidden {
+    display: none;
+}
